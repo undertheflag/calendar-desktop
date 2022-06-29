@@ -1,0 +1,67 @@
+{
+  "name": "calendardesktop",
+  "productName": "Calendar",
+  "version": "1.0.0",
+  "description": "the calendar is a application that record your life.",
+  "main": "src/index.js",
+  "scripts": {
+    "preinstall": "make init",
+    "clean": "rm -rf ./out",
+
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [
+    "calendar",
+    "life",
+    "electron",
+    "vite"
+  ],
+  "author": {
+    "name": "zhi",
+    "email": "linkxsystem@gaoding.com"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "icon": "./assets/icns/icon.icns"
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "calendar"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.63",
+    "@electron-forge/maker-deb": "^6.0.0-beta.63",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.63",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
+    "@electron-forge/maker-zip": "^6.0.0-beta.63",
+    "electron": "19.0.6"
+  }
+}
